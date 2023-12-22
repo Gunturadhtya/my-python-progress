@@ -6,9 +6,7 @@ def write_data_loop(filename):
             data = input("> ")
 
             if data == "done" :
-                with open(filename, 'r') as w:
-                    line=w.read()
-                    print(line)
+                calculate_data()
                 break
 
             int(data)
@@ -22,7 +20,13 @@ def write_data_loop(filename):
         print("bad input")
         write_data_loop(filename)
 
-        
+def calculate_data(filename):
+    with open(filename, 'r') as w:
+        data = w.readlines()
+        for number in data:
+            count = number.split()
+            print(count)
+
 filename = "data.txt"
 write_data_loop(filename)
 os.remove(filename)
