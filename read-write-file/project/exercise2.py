@@ -41,7 +41,7 @@ def calculate_data(filename):
     # this statement will convert list to integer
     convert=list(map(int, number))
     
-    # calculate sum, how many input, and average on the list
+    # calculate sum, how many input, min and max on the list
     total=sum(convert)
     count=len(convert)
 
