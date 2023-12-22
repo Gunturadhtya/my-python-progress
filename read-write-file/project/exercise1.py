@@ -1,3 +1,5 @@
+import os
+
 def write_data_loop(filename):
     try:
         while True:
@@ -12,8 +14,8 @@ def write_data_loop(filename):
             int(data)
 
             with open(filename, 'a') as f:
-                data = str(data)
-                f.write(data)
+                str(data)
+                f.write(data + ' ')
                 
             print(data)
     except:
@@ -23,3 +25,4 @@ def write_data_loop(filename):
         
 filename = "data.txt"
 write_data_loop(filename)
+os.remove(filename)
