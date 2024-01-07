@@ -1,12 +1,17 @@
+# open file romeo.txt
 fname = open("romeo.txt")
 
 word = []
+
+# for loop; append line on romeo to list word; if the line already on list it'll not append it;
+# and sort the line in alphabetical order
 for lines in fname:
     lines = lines.split()
+   
     for line in lines:
-        word.append(line)
-        
-        repeatedWord = word.count(line)
-        print(repeatedWord, ' : ' , line)
-        word = sorted(word)                
+        if line not in word:
+            word.append(line)
+        word.sort()
+
+# print word
 print(word)
